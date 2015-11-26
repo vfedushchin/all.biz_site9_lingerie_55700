@@ -1,0 +1,132 @@
+{extends file="../index.html"}
+{block name=article}
+<section>
+    <div class="row">
+        <div id="content" class=" col-sm-12 ">
+            <div class="breadcrumb">
+                {if $BREADCRUMBS} {foreach from=$BREADCRUMBS item=item key=key}
+                <span class="b-bread-list__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                        {if not $item@last}
+                            <span class="b-link b-bread-list__link" onclick="location.href='{$item.href}'" title="" itemprop="url"><span itemprop="title">{$item.name|escape:"html"}</span></span><span class="b-bread-list__separator"></span> {else} {if $item@first}<strong>{/if}<span class="b-bread-list__link" title="" itemprop="title">{$item.name|escape:"html"}</span>{if $item@first}</strong>{/if} {/if}
+                </span>
+                {/foreach} {/if}
+            </div>
+            <h1>About Us</h1>
+            <div class="row about-page">
+                <div class="col-sm-4">
+                    <h3>WHY CHOOSE US?</h3>
+                    <span class="dropcap">01</span>
+                    <!-- .dropcap (end) -->
+                    <div class="extra-wrap">
+                        <h4>Lorem ipsum dolor amet consectetur.</h4>
+                        <p>Et dolore magna aliqua. Ut enim adim veniam, quis nostrudexercitation amc.</p>
+                    </div>
+                    <div class="clear"></div>
+                    <!-- .clear (end) --><span class="dropcap">02</span>
+                    <!-- .dropcap (end) -->
+                    <div class="extra-wrap">
+                        <h4>Vestibulum libero nisl porta sceleris.</h4>
+                        <p>Duis aute iruredolor in reprehenderit in. voluptate velit esse. Fusce euismod co.</p>
+                    </div>
+                    <div class="clear"></div>
+                    <!-- .clear (end) --><span class="dropcap">03</span>
+                    <!-- .dropcap (end) -->
+                    <div class="extra-wrap">
+                        <h4>Etiam cursus leo vel metus.</h4>
+                        <p>Amet, consectetuer adipiscing elit. Pel lentesque sed dolor. Aliquam congue.</p>
+                    </div>
+                    <div class="clear"></div>
+                    <!-- .clear (end) -->
+                </div>
+                <div class="col-sm-8">
+                    <h3>a few words about us</h3>
+                    <img class="alignleft" alt="" src="{$template}/image/page2_pic1.jpg">
+                    <h4>Et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude xercitation ullamco laboris nisi utaquip ex ea.</h4>
+                    <p>Duis aute iruredolor in reprehenderit in. voluptate velit esse. Fusce euismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque sed dolor. Aliquam congue fermentum nisl.emo eniptaiades kunasa niausyse hauysgasa.</p>
+                    <p>Miuahs onsequ untur magni doloresqui. Et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudexercitation ullamco laboris nisi utaquip ex ea. commodo consequa. Duis aute iruredolor in reprehenderit in. voluptate velit esse. Turie ntots nascetur riculus mullamale ada odi dio gravida atcur ecuus.</p>
+                    <a href="index.php?route=information/contact" title="read more" class="btn btn-default btn-small btn-inline " target="_self">read more</a>
+                    <!-- .btn -->
+                </div>
+                <div class="col-sm-12">
+                    <div class="sm_hr"></div>
+                </div>
+                <div class="col-sm-4">
+                    <h3>TESTIMONIALS</h3>
+                    <div class="testimonials ">
+                        <div class="testi-item">
+                            <blockquote class="testi-item_blockquote">
+                                <p>Aenean nonummy hendrerit mau phasellu porta. Fusce suscipit varius mi sed. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.... </p>
+                                <div class="clear"></div>
+                            </blockquote>
+                            <div class="testi-meta">
+                                <div class="user">Tim Barkley</div>
+                                <a href="http://demolink.org">http://demolink.org</a> </div>
+                        </div>
+                        <div class="testi-item">
+                            <blockquote class="testi-item_blockquote">
+                                <p>Aenean nonummy hendrerit mau phasellu porta. Fusce suscipit varius mi sed. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.... </p>
+                                <div class="clear"></div>
+                            </blockquote>
+                            <div class="testi-meta">
+                                <div class="user">Lisa Whistler</div>
+                                <a href="http://demolink.org">http://demolink.org</a> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <h3>OUR TEAM</h3>
+                    <div class="recent-posts row">
+                        <div class="col-sm-4">
+                            <figure class="thumbnail featured-thumbnail">
+                                <a href="index.php?route=information/information&amp;information_id=7" title="Robert Johnson"> <img src="{$template}/image/Depositphotos_6325694_original-230x240.jpg" alt="Robert Johnson"> </a>
+                            </figure>
+                            <h5>                    <a href="index.php?route=information/information&amp;information_id=7" title="Robert Johnson">Robert Johnson</a>                </h5>
+                            <div class="excerpt">Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- .entry (end) -->
+                        <div class="col-sm-4">
+                            <figure class="thumbnail featured-thumbnail">
+                                <a href="index.php?route=information/information&amp;information_id=8" title="Jessica Priston"> <img src="{$template}/image/Depositphotos_10953362_EL4-230x240.jpg" alt="Jessica Priston"> </a>
+                            </figure>
+                            <h5>                    <a href="index.php?route=information/information&amp;information_id=8" title="Jessica Priston">Jessica Priston</a>              </h5>
+                            <div class="excerpt">Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- .entry (end) -->
+                        <div class="col-sm-4">
+                            <figure class="thumbnail featured-thumbnail">
+                                <a href="index.php?route=information/information&amp;information_id=9" title="Sam Kromstain"> <img src="{$template}/image/Depositphotos_1382984_original-230x240.jpg" alt="Sam Kromstain"> </a>
+                            </figure>
+                            <h5>                    <a href="index.php?route=information/information&amp;information_id=9" title="Sam Kromstain">Sam Kromstain</a>              </h5>
+                            <div class="excerpt">Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- .entry (end) -->
+                        <div class="col-sm-4">
+                            <figure class="thumbnail featured-thumbnail">
+                                <a href="index.php?route=information/information&amp;information_id=10" title="Edna Barton"> <img src="{$template}/image/Depositphotos_28394885_original-230x240.jpg" alt="Edna Barton"> </a>
+                            </figure>
+                            <h5>                    <a href="index.php?route=information/information&amp;information_id=10" title="Edna Barton">Edna Barton</a>             </h5>
+                            <div class="excerpt">Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- .entry (end) -->
+                        <div class="col-sm-4">
+                            <figure class="thumbnail featured-thumbnail">
+                                <a href="index.php?route=information/information&amp;information_id=11" title="Julie Herzigova"> <img src="{$template}/image/Depositphotos_1961767_original-230x240.jpg" alt="Julie Herzigova"> </a>
+                            </figure>
+                            <h5>                    <a href="index.php?route=information/information&amp;information_id=11" title="Julie Herzigova">Julie Herzigova</a>             </h5>
+                            <div class="excerpt">Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in... </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- .entry (end) -->
+                    </div>
+                    <div class="spacer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{/block}

@@ -1,0 +1,241 @@
+{extends file="../index.html"}
+{block name=article}{strip}
+
+</div>
+
+
+
+<div class="header_modules">
+
+
+
+
+
+{if $BLOCK_NEWS}
+    <section class="parallax well2 marTop1 parallax-2"  data-url="{$template}/image/parallax-2.jpg" data-mobile="true" data-speed="1"> 
+      <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>{substr($BLOCK_NEWS[0].title|escape:"htmlall",0,120)}...</h1>
+                    <em>{$BLOCK_NEWS[0].title|escape:"htmlall"} : {substr($BLOCK_NEWS[1].body|escape:"htmlall",0,290)}</em>
+                    <a class="button" href="{$BLOCK_NEWS[0].href}">Подробнее</a> </div>
+            </div>
+        </div>
+    </section>
+{/if}
+
+
+    <div id="banner0" class="banners">
+        <div class="col-50 banner-1">
+            <div class="banner-box">
+                <a class="clearfix" href="#">
+                    <div class="image">
+                        <img src="{$template}/image/banner-1.jpg" alt="banner-1" class="img-responsive">
+                    </div>
+                    <div class="s-desc">
+                        <h2>Luxury <span>Panties</span></h2>
+                        <span class="fa  fa-search"></span></div>
+                </a>
+            </div>
+        </div>
+        <div class="col-50 banner-2">
+            <div class="banner-box">
+                <a class="clearfix" href="#">
+                    <div class="image">
+                        <img src="{$template}/image/banner-2.jpg" alt="banner-2" class="img-responsive">
+                    </div>
+                    <div class="s-desc">
+                        <h2>Lingerie <span>Sets</span></h2>
+                        <span class="fa  fa-search"></span></div>
+                </a>
+            </div>
+        </div>
+        <div class="col-50 banner-3">
+            <div class="banner-box">
+                <a class="clearfix" href="#">
+                    <div class="image">
+                        <img src="{$template}/image/banner-3.jpg" alt="banner-3" class="img-responsive">
+                    </div>
+                    <div class="s-desc">
+                        <h2>Sexy <span>Lingerie</span></h2>
+                        <span class="fa  fa-search"></span></div>
+                </a>
+            </div>
+        </div>
+        <div class="col-50 banner-4">
+            <div class="banner-box">
+                <a class="clearfix" href="#">
+                    <div class="image">
+                        <img src="{$template}/image/banner-4.jpg" alt="banner-4" class="img-responsive">
+                    </div>
+                    <div class="s-desc">
+                        <h2>Luxury <span>Bras</span></h2>
+                        <span class="fa  fa-search"></span></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <section class="parallax well2 parallax-2"  data-url="{$template}/image/parallax-1.jpg" data-mobile="true" data-speed="1"> 
+      <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1>{substr($BLOCK_NEWS[1].title|escape:"htmlall",0,142)}...</h1>
+                        <em>{$BLOCK_NEWS[1].title|escape:"htmlall"} : {substr($BLOCK_NEWS[1].body|escape:"htmlall",0,290)}</em>
+                        <a class="button" href="{$BLOCK_NEWS[1].href}">Подробнее</a> </div>
+                </div>
+            </div>
+    </section>
+
+
+
+    <div class="box_html ">
+        <div class="bg-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="info-block fa-archive">
+                            <div class="cnt">
+                                <h1>Бесплатная <span>доставка</span></h1>
+                                <h2>от $99</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="info-block mod1 fa-phone">
+                            <div class="cnt">
+                                <h1>заказ <span>online</span></h1>
+                                <h2>Время: 8AM -11PM </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container ">
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="content_bottom float-fix">
+    <div class="bg-featured">
+        <div class="container">
+            <div class="box featured">
+                <div class="box-heading">
+                    <h3>{$props->get('lng.products')|capitalize}</h3></div>
+                <div class="box-content">
+                    <div class="row">
+
+                    	{$n=1}
+											{foreach from=$GOODS_BLOCKS item=item  key=key}
+
+
+                            <div class="product-layout col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                                <div class="product-thumb transition">
+                                    <div class="image">
+                                        <a href="{$item.href}" style="background-image: url('{$item.img_src}')"  class="product-bg-container">
+                                        </a>
+                                    </div>
+
+                                    <div class="caption">
+                                        <div class="price">
+                                          {$item.price_native} {$item.currency}
+                                        </div>
+                                        <div class="name"><a href="{$item.href}">{substr($item.product_name|escape:"htmlall",0,84)}... </a></div>
+                                        <div class="description">
+                                            {substr($item.description|escape:"htmlall",0,290)}</div>
+                                    </div>
+
+                                    <div class="cart-button">
+                                        {if $IS_SHOP_CART_ACTIVE && $item.price_native > 0}
+                                        <a id="{$item.id}" class="product-btn-add button addToCart b-button_type_order" onClick="ga('send', 'event', 'CPA', 'order', 'order_button'); ga('send', 'event', 'cart', 'add_to_cart'); addtocart({$item.id}, '{$smarty.const.COUNTRY_CODE}', 1); return false;">
+                                            <span>{$props->get('lng.add_to_card')}</span>
+                                            <i class="fa fa-shopping-cart"></i> <!-- Купить -->
+                                        </a>
+                                        {else} {if $item.message_popup_link}
+                                        <a class="product-btn-add button addToCart b-button_type_order js-message-form-popup" data-href="{$item.message_popup_link}?force_order=1">
+                                            <span>{$props->get('lng.order')}</span>
+                                            <i class="fa fa-shopping-cart"></i> <!-- Купить -->
+                                        </a>
+                                        {else}
+                                        <a id="{$item.id}" href="javascript: //" class="product-btn-add button addToCart b-button_type_order js-button_type_order b-show_other" onClick="trackMe('{$typeOfPage}', 'order', 'Click');ga('send', 'event', 'CPA', 'order', 'order_button');">
+                                            <span>{$props->get('lng.order')}</span>
+                                            <i class="fa fa-shopping-cart"></i> <!-- Купить -->
+                                        </a>
+                                        {/if} {/if}
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+                        {if ($n>=8)}
+													{break}
+												{/if}
+												{$n=$n+1}
+
+												{/foreach}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+<div class="map-content marBot1">
+  <div id="google-map" class="map_model"  data-x="{$company.longitude}" data-y="{$company.latitude}" data-zoom="15"></div>
+  <ul class="map_locations">
+    <li data-x="{$company.longitude}" data-y="{$company.latitude}" data-basic="{$template}/image/marker_map.png" data-active="{$template}/image/marker_map_active.png">
+      <p> Позвоните нам <span><a href="callto:{$company.phone}">{$company.phone}</a></span></p>
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{/strip}{/block}
+
+{block name="custom_js"}
+	<script src="{$STATIC_HOST}/js/includes/showcase/showcase.js"></script>
+{/block}
